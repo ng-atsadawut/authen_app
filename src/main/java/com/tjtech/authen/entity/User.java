@@ -34,11 +34,14 @@ public class User {
     private LocalDateTime lastLoginSuccess;
 
     @Column(nullable = false)
-    private String role = "user";
+    private String role = "USER";
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt = LocalDateTime.now();
 
+    public void setRole(String role) {
+        this.role = role.toUpperCase();
+    }
 }
 

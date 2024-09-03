@@ -3,6 +3,7 @@ package com.tjtech.authen.service;
 import com.tjtech.authen.entity.User;
 import com.tjtech.authen.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,10 @@ public class UserService {
             return userRepository.save(user);
         }
         return null;
+    }
+
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
     public boolean changePassword(Long userId, String oldPassword, String newPassword) {
