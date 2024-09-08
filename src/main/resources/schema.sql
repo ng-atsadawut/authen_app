@@ -11,3 +11,18 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+
+CREATE TABLE log_activity (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    method VARCHAR(10) NOT NULL,              -- HTTP method (GET, POST, PUT, DELETE, etc.)
+    url VARCHAR(255) NOT NULL,                -- The URL of the API request
+    headers TEXT,                            -- Headers of the request
+    status INT NOT NULL,                     -- HTTP status code
+    request_body TEXT,                       -- Request body in JSON format or as a string
+    response_body TEXT,                      -- Response body in JSON format or as a string
+    ip_address VARCHAR(45),                  -- IP address of the requester (supports IPv4 and IPv6)
+    username VARCHAR(255),                       -- User ID or username who made the request
+    create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp of when the log entry was created
+    update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Timestamp of last update
+);

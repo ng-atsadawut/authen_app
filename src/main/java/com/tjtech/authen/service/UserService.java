@@ -3,10 +3,9 @@ package com.tjtech.authen.service;
 import com.tjtech.authen.entity.User;
 import com.tjtech.authen.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -58,6 +57,7 @@ public class UserService {
             User user = userOptional.get();
             if (passwordEncoder.matches(oldPassword, user.getPassword())) {
                 user.setPassword(passwordEncoder.encode(newPassword));
+                user.setLastLoginSuccess(LocalDateTime.now());
                 user.setUpdatedAt(LocalDateTime.now());
                 userRepository.save(user);
                 return true;

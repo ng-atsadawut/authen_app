@@ -1,4 +1,4 @@
-package com.tjtech.authen.security;
+package com.tjtech.authen.filter;
 
 import com.tjtech.authen.security.JwtTokenProvider;
 import jakarta.servlet.FilterChain;
