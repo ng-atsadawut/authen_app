@@ -43,7 +43,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/login").permitAll()
 //                        .requestMatchers("/api/auth/update/**").hasAnyAuthority("USER", "ADMIN")
 //                        .requestMatchers("/api/auth/change-password/**").hasAnyAuthority("USER", "ADMIN")
-                        .requestMatchers("/api/auth/delete/**").hasRole("ADMIN")
+                        .requestMatchers("/api/auth/delete/**").hasAuthority("ADMIN")
                         .requestMatchers("/api/**").hasAnyAuthority("USER", "ADMIN")
                         .anyRequest().authenticated()
                 )
