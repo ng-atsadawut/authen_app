@@ -6,8 +6,8 @@
 - [X] jwt
 - [ ] http status
 - [X] custom activity log console
-- [ ] design table for log activity
-- [ ] custom activity log to database
+- [X] design table for log activity
+- [X] custom activity log to database
 - [ ] split controller auth and user
 - [ ] create function get all user
 - [ ] create function get forgot password
