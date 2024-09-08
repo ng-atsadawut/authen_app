@@ -1,5 +1,5 @@
-INSERT INTO users (username, password, email, name, lastname, role, countLogin, lastLoginSuccess)
+
+
+INSERT INTO users (username, password, email, name, lastname, countLogin, lastLoginSuccess, role)
 VALUES
-('admin', '$2a$10$yRjdD/8HrUnJw5sPZfWyaOcQFNW8H8oXJ21cLsd/2ItMIxQlYEuBO', 'admin@example.com', 'Admin', 'User', 'admin', 0, NULL),
-('user1', '$2a$10$yRjdD/8HrUnJw5sPZfWyaOcQFNW8H8oXJ21cLsd/2ItMIxQlYEuBO', 'user1@example.com', 'John', 'Doe', 'user', 0, NULL),
-('user2', '$2a$10$yRjdD/8HrUnJw5sPZfWyaOcQFNW8H8oXJ21cLsd/2ItMIxQlYEuBO', 'user2@example.com', 'Jane', 'Doe', 'user', 0, NULL);
+    ('admin', '$2a$10$tzTCCCrcEDBFqOYuUt1/tOzHsaYK44reTXiyVEaRQjfjkmL9Yv9Xe', 'admin@example.com', 'name', 'last', 0, NULL, 'ADMIN');
